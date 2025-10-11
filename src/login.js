@@ -54,19 +54,11 @@ document.getElementById('submitBtn').addEventListener('click', (event) => {
         }
         });
 
-                // ativar a função de criar uma nova conta 
-
-        openAccount.addEventListener('click', (event) => {
-            event.preventDefault();
-            window.location.href = "/pages/newconta.html";
-        });
-
-        facaLogin.addEventListener('click', (event) => {
-            event.preventDefault();
-            window.location.href = "/login.html";
-        });
-        
-        sair.addEventListener('click', (event) => {
-            event.preventDefault();
-            window.location.href = "/pages/index.html";
-        });
+        // --- Correção: Selecionar o botão pelo ID e adicionar o evento ---
+        const openAccountBtn = document.getElementById('openAccount');
+        if (openAccountBtn) {
+            openAccountBtn.addEventListener('click', (event) => {
+                event.preventDefault();
+                window.location.href = "/pages/newconta.html"; // Caminho para a página de cadastro
+            });
+        }

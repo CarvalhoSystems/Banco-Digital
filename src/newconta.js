@@ -36,10 +36,3 @@ document.getElementById('submitCadastroBtn').addEventListener('click', (event) =
         });
     }
 });
-
-// Faça o Login
-
-facaLogin.addEventListener('click', (event) => {
-    event.preventDefault();
-    window.location.href = "/pages/index.html";
-});
