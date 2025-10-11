@@ -1,0 +1,150 @@
+/* ----------------------------------------------------------------
+ * 1. Configuração Global e Layout Base (BODY)
+ * ---------------------------------------------------------------- */
+body {
+    font-family: system-ui, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+    display: flex;
+    flex-direction: column; /* Organiza h1, layout-content e footer verticalmente */
+    align-items: center; /* Centraliza todo o conteúdo horizontalmente */
+    min-height: 100vh;
+    background: linear-gradient(135deg, #1d2b64, #2575fc);
+    color: #fff;
+    margin: 0;
+    padding: 20px;
+}
+
+/* ----------------------------------------------------------------
+ * 2. Título (H1) e Rodapé (FOOTER)
+ * ---------------------------------------------------------------- */
+h1 {
+    font-size: 2rem;
+    text-align: center;
+    margin: 0;
+    padding-bottom: 30px; /* Espaçamento entre o título e o conteúdo principal */
+}
+
+footer {
+    border-radius: 10px;
+    padding: 10px;
+    margin-top: 30px; /* Espaçamento entre o card e o footer */
+    text-align: center;
+}
+
+/* ----------------------------------------------------------------
+ * 3. Contêiner Principal e Conteúdo (Layout Central)
+ * ---------------------------------------------------------------- */
+
+/* Contêiner que alinha Ilustração e Card Lado a Lado */
+.layout-content {
+    display: flex;
+    align-items: center; /* Alinha a Ilustração e o Card no centro vertical */
+    justify-content: center; /* Centraliza a dupla horizontalmente */
+    gap: 40px; /* Espaço entre a imagem e o card */
+    width: 100%;
+    /* ESSENCIAL: Ocupa todo o espaço vertical livre, empurrando o footer para baixo */
+    flex-grow: 1; 
+}
+
+/* Estilo para a imagem grande */
+.ilustracao-banner {
+    max-width: 450px; /* Limita o tamanho do contêiner da imagem */
+    height: auto;
+}
+
+.logo-img {
+    width: 100%; /* Faz a imagem ocupar o contêiner da ilustração */
+    height: auto;
+    display: block; /* Remove o espaço extra abaixo da imagem */
+}
+
+.card {
+    width: 100%;
+    max-width: 520px;
+    background: rgba(255,255,255,0.06);
+    padding: 18px;
+    border-radius: 12px;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.3);
+}
+
+/* ----------------------------------------------------------------
+ * 4. Responsividade (Mobile)
+ * ---------------------------------------------------------------- */
+
+/* Ponto de quebra para telas menores (ex: tablets e celulares) */
+@media (max-width: 1050px) { 
+    
+    /* Empilha a Ilustração e o Card em telas pequenas */
+    .layout-content {
+        flex-direction: column;
+        gap: 25px;
+        padding: 0 10px; /* Adiciona um pequeno padding nas laterais */
+    }
+
+    /* Reduz o tamanho da imagem para caber melhor no celular */
+    .ilustracao-banner {
+        max-width: 90vw;
+    }
+}
+
+
+/* ----------------------------------------------------------------
+ * 5. Estilos de Conteúdo (Mantidos de seu código original)
+ * ---------------------------------------------------------------- */
+.row {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    margin-bottom: 10px;
+}
+/* -------------------------------------------------------------------
+* 6. Button e Input
+*------------------------------------------------------------------- */
+
+button {
+    /* Define o espaço flexível para que os botões se ajustem bem na .row */
+    flex: 1 1 auto; 
+    
+    padding: 12px 16px; /* Aumenta o padding para botões maiores */
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    
+    /* Degradê Chamativo - Usando cores inspiradas no seu fundo */
+    background: linear-gradient(90deg, #6a11cb, #2575fc); /* Roxo para Azul Claro */
+    color: white;
+    font-weight: bold; /* Deixa o texto mais legível */
+    text-transform: uppercase; /* Ajuda a dar destaque */
+    letter-spacing: 0.5px;
+    
+    /* Efeito de Sombra sutil para "levantar" o botão */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); 
+    
+    /* Transição suave para o efeito hover */
+    transition: background 0.3s ease, transform 0.1s ease;
+}
+
+/* Efeito ao passar o mouse (Hover) */
+button:hover {
+    /* Aumenta a sombra e muda sutilmente o degradê ou a posição */
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.5);
+    transform: translateY(-1px); /* Pequeno efeito de "levantar" */
+    opacity: 0.9;
+}
+
+/* Efeito ao clicar (Active) */
+button:active {
+    transform: translateY(1px); /* Pequeno efeito de "pressionar" */
+}
+
+/* ----------------------------------------------------------------
+ * OPCIONAL: Destaque Especial para Ações Principais (Depositar/Sacar)
+ * ---------------------------------------------------------------- */
+
+
+#deposito {
+    background: linear-gradient(90deg, #00b09b, #96c93d); /* Verde Vívido para Depósito */
+}
+
+#saque {
+    background: linear-gradient(90deg, #d31027, #ff2300); /* Vermelho Vívido para Saque */
+}

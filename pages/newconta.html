@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Criar Nova Conta | Banco Digital</title>
+    <link rel="stylesheet" href="../src/style.css"> 
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script> 
+</head>
+<body>
+    
+    <h1>CRIE SUA CONTA DIGITAL</h1>
+
+    <div class="layout-content">
+        
+        <div class="card" role="main" id="cadastroCard">
+            <h2>Dados Pessoais</h2>
+
+            <form id="cadastroForm">
+                
+                <div class="row">
+                    <input type="text" id="nomeCompleto" placeholder="Nome Completo" required aria-label="Nome Completo">
+                    <input type="text" id="cpfCadastro" placeholder="CPF (Apenas números)" required aria-label="CPF">
+                </div>
+
+                <div class="row">
+                    <input type="email" id="agencia" placeholder="Digite sua Agência" required aria-label="Agência">
+                    <input type="text" id="Conta" placeholder=" Digite sua Conta" required aria-label="Conta">
+                </div>
+
+                <div class="row">
+
+                </div>
+                
+                <h2>Crie sua Senha de Acesso</h2>
+                
+                <div class="row">
+                    <input type="password" id="senhaCadastro" placeholder="Senha (mín. 6 caracteres)" required aria-label="Senha">
+                    <input type="password" id="confirmaSenha" placeholder="Confirme a Senha" required aria-label="Confirme a Senha">
+                </div>
+
+                <div class="row" style="justify-content: center;">
+                    <button type="submit" id="submitCadastroBtn">
+                        Criar Minha Conta Agora
+                    </button>
+                </div>
+
+            </form>
+            
+            <div class="meta" style="text-align: center; margin-top: 15px;">
+                Já tem cadastro? 
+                <a href="./login.html" style="color: #2575fc; text-decoration: none; font-weight: bold;">Faça Login</a>
+            </div>
+
+            <div id="statusCadastro" style="margin-top: 10px; color: red;"></div>
+
+        </div> 
+    </div> 
+    <footer>
+        <small>Banco Digital - Todos os direitos reservados &copy; 2025</small>
+    </footer>
+
+    <script src="../src/newConta.js"></script>
+</body>
+</html>
