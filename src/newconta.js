@@ -32,7 +32,7 @@ document.getElementById('submitCadastroBtn').addEventListener('click', (event) =
             showConfirmButton: false,
             timer: 1500
         }).then(() => {
-            window.location.href ="/pages/conta.html";
+            window.location.href ="./conta.html";
         });
     }
 });
