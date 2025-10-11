@@ -41,7 +41,7 @@ document.getElementById('submitBtn').addEventListener('click', (event) => {
             timer: 1500 // Fecha automaticamente em 1.5 segundos
             }).then(() => {
 
-            window.location.href = "/pages/index.html";
+            window.location.href = "/pages/conta.html";
 
             });
         } else {
@@ -64,4 +64,9 @@ document.getElementById('submitBtn').addEventListener('click', (event) => {
         facaLogin.addEventListener('click', (event) => {
             event.preventDefault();
             window.location.href = "/login.html";
+        });
+        
+        sair.addEventListener('click', (event) => {
+            event.preventDefault();
+            window.location.href = "/pages/index.html";
         });
