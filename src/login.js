@@ -58,5 +58,10 @@ document.getElementById('submitBtn').addEventListener('click', (event) => {
 
         openAccount.addEventListener('click', (event) => {
             event.preventDefault();
-            window.location.href = "./pages/newconta.html";
+            window.location.href = "/pages/newconta.html";
+        });
+
+        facaLogin.addEventListener('click', (event) => {
+            event.preventDefault();
+            window.location.href = "/login.html";
         });
