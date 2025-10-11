@@ -41,7 +41,7 @@ document.getElementById('submitBtn').addEventListener('click', (event) => {
             timer: 1500 // Fecha automaticamente em 1.5 segundos
             }).then(() => {
 
-            window.location.href = "./index.html";
+            window.location.href = "/pages/index.html";
 
             });
         } else {
@@ -58,5 +58,5 @@ document.getElementById('submitBtn').addEventListener('click', (event) => {
 
         openAccount.addEventListener('click', (event) => {
             event.preventDefault();
-            window.location.href = "./newconta.html";
+            window.location.href = "./pages/newconta.html";
         });

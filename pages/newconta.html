@@ -8,14 +8,10 @@
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script> 
 </head>
 <body>
-    
-    <h1>CRIE SUA CONTA DIGITAL</h1>
-
-    <div class="layout-content">
-        
+    <main class="container" role="main">
         <section class="card" role="main" id="cadastroCard">
             <header class="card-header">
-                <h1 id="cardTitle">Crie sua Conta Digital</h1>
+                <h1 id="cardTitle">Banco Digital</h1>
                 <p>Preencha os dados para começar</p>
             </header>
 
@@ -27,10 +23,20 @@
                 </div>
 
                 <div class="group">
-                    <label for="cpfCadastro">CPF</label>
-                    <input type="text" id="cpfCadastro" inputmode="numeric" placeholder="CPF (Apenas números)" required aria-label="CPF">
+                    <label for="cpf">CPF</label>
+                    <input type="text" id="cpf" inputmode="numeric" placeholder="CPF (somente números)" required aria-label="CPF">
                 </div>
 
+                <div class="group row">
+                    <div class="col">
+                        <label for="numeroAgencia">Agência</label>
+                        <input type="text" id="numeroAgencia" inputmode="numeric" placeholder="Ex: 0001" required aria-label="Número da Agência">
+                    </div>
+                    <div class="col">
+                        <label for="numeroconta">Conta</label>
+                        <input type="text" id="numeroconta" inputmode="numeric" placeholder="Ex: 123456-7" required aria-label="Número da Conta">
+                    </div>
+                </div>
                 <div class="group">
                     <label for="senhaCadastro">Crie sua Senha de Acesso</label>
                     <input type="password" id="senhaCadastro" placeholder="Senha (mín. 6 caracteres)" required aria-label="Senha">
@@ -55,7 +61,7 @@
             </div>
 
         </section> 
-    </div> 
+    </main>
     <footer>
         <small>Banco Digital - Todos os direitos reservados &copy; 2025</small>
     </footer>

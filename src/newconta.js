@@ -4,16 +4,15 @@ document.getElementById('submitCadastroBtn').addEventListener('click', (event) =
 
     const CadastroForm = document.getElementById('cadastroForm');
     const nome = document.getElementById('nomeCompleto').value;
-    const cpf = document.getElementById('cpfCadastro').value;
-    const agencia = document.getElementById('agencia').value;
-    const conta = document.getElementById('Conta').value;
+    const cpf = document.getElementById('cpf').value;
+    const agencia = document.getElementById('numeroAgencia').value;
+    const conta = document.getElementById('numeroconta').value;
     const senha = document.getElementById('senhaCadastro').value;
     const confirmaSenha = document.getElementById('confirmaSenha').value;
 
 
 
-
-    if (nome === "" || cpf === "" || conta=== "" |agencia === ""|| senha === "" || confirmaSenha === "") {
+    if (nome === "" || cpf === "" || conta === "" || agencia === "" || senha === "" || confirmaSenha === "") {
         Swal.fire({
             icon: 'warning',
             title: 'Atenção!',
