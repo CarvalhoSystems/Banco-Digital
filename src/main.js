@@ -121,5 +121,5 @@ window.addEventListener('DOMContentLoaded', () => {
 });
 
 document.getElementById('sair').addEventListener('click', () => {
-  window.location.href = "/pages/index.html";
+  window.location.href = "/index.html";
 });
