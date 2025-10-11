@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Criar Nova Conta | Banco Digital</title>
-    <link rel="stylesheet" href="../src/style.css"> 
+    <link rel="stylesheet" href="../src/login.css"> 
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script> 
 </head>
 <body>
@@ -13,53 +13,53 @@
 
     <div class="layout-content">
         
-        <div class="card" role="main" id="cadastroCard">
-            <h2>Dados Pessoais</h2>
+        <section class="card" role="main" id="cadastroCard">
+            <header class="card-header">
+                <h1 id="cardTitle">Crie sua Conta Digital</h1>
+                <p>Preencha os dados para começar</p>
+            </header>
 
-            <form id="cadastroForm">
+            <form id="cadastroForm" novalidate>
                 
-                <div class="row">
+                <div class="group">
+                    <label for="nomeCompleto">Nome Completo</label>
                     <input type="text" id="nomeCompleto" placeholder="Nome Completo" required aria-label="Nome Completo">
-                    <input type="text" id="cpfCadastro" placeholder="CPF (Apenas números)" required aria-label="CPF">
                 </div>
 
-                <div class="row">
-                    <input type="email" id="agencia" placeholder="Digite sua Agência" required aria-label="Agência">
-                    <input type="text" id="Conta" placeholder=" Digite sua Conta" required aria-label="Conta">
+                <div class="group">
+                    <label for="cpfCadastro">CPF</label>
+                    <input type="text" id="cpfCadastro" inputmode="numeric" placeholder="CPF (Apenas números)" required aria-label="CPF">
                 </div>
 
-                <div class="row">
-
-                </div>
-                
-                <h2>Crie sua Senha de Acesso</h2>
-                
-                <div class="row">
+                <div class="group">
+                    <label for="senhaCadastro">Crie sua Senha de Acesso</label>
                     <input type="password" id="senhaCadastro" placeholder="Senha (mín. 6 caracteres)" required aria-label="Senha">
+                </div>
+                
+                <div class="group">
+                    <label for="confirmaSenha">Confirme sua Senha</label>
                     <input type="password" id="confirmaSenha" placeholder="Confirme a Senha" required aria-label="Confirme a Senha">
                 </div>
 
-                <div class="row" style="justify-content: center;">
-                    <button type="submit" id="submitCadastroBtn">
+                <div class="actions">
+                    <button type="submit" id="submitCadastroBtn" class="primary">
                         Criar Minha Conta Agora
                     </button>
                 </div>
 
             </form>
             
-            <div class="meta" style="text-align: center; margin-top: 15px;">
+            <div style="font-size:13px;color:#3b6280; text-align: center; margin-top: 15px;">
                 Já tem cadastro? 
-                <a href="./login.html" style="color: #2575fc; text-decoration: none; font-weight: bold;">Faça Login</a>
+                <a href="./login.html" class="link" style="text-decoration: none;">Faça Login</a>
             </div>
 
-            <div id="statusCadastro" style="margin-top: 10px; color: red;"></div>
-
-        </div> 
+        </section> 
     </div> 
     <footer>
         <small>Banco Digital - Todos os direitos reservados &copy; 2025</small>
     </footer>
 
-    <script src="../src/newConta.js"></script>
+    <script src="../src/newconta.js"></script>
 </body>
 </html>
