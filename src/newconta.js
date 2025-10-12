@@ -11,7 +11,6 @@ document.getElementById('submitCadastroBtn').addEventListener('click', (event) =
     const confirmaSenha = document.getElementById('confirmaSenha').value;
 
 
-
     if (nome === "" || cpf === "" || conta === "" || agencia === "" || senha === "" || confirmaSenha === "") {
         Swal.fire({
             icon: 'warning',
@@ -46,7 +45,7 @@ document.getElementById('submitCadastroBtn').addEventListener('click', (event) =
             showConfirmButton: false,
             timer: 1500
         }).then(() => {
-            window.location.href ="./index.html";
+            window.location.href ="../index.html";
         });
     }
 });
