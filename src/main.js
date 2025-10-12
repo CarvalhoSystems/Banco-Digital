@@ -29,7 +29,7 @@ class ContaBancaria {
   depositar(valor) {
     const cents = this.parseToCents(valor);
     if (isNaN(cents) || cents <= 0) return { ok:false, message:"Valor inválido para depósito." };
-    if (cents > 10000 * 100) return { ok:false, message:"Valor máximo para depósito é R$10.000,00." };
+    if (cents > 100000 * 100) return { ok:false, message:"Valor máximo para depósito é R$10.000,00." };
 
     this.saldoCents += cents;
     this.transactions.push({ type: "Depósito", amountCents: cents, dateISO: new Date().toISOString() });

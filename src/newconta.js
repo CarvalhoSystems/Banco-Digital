@@ -25,6 +25,20 @@ document.getElementById('submitCadastroBtn').addEventListener('click', (event) =
             text: 'As senhas não coincidem. Tente novamente.',
         });
     } else {
+
+        // Salva nome e outras variaveis no localStorange 
+        // Se vc tiver um sistemas de nuktiplos acesso o ideal e usar um array
+
+        const novaConta = {
+            nome: nome,
+            cpf: cpf,
+            agencia: agencia,
+            conta: conta,
+            senha: senha,
+        };
+
+        localStorage.setItem('novaConta', JSON.stringify(novaConta));
+
         Swal.fire({
             icon: 'success',
             title: 'Cadastro Bem-Sucedido!',
@@ -32,7 +46,7 @@ document.getElementById('submitCadastroBtn').addEventListener('click', (event) =
             showConfirmButton: false,
             timer: 1500
         }).then(() => {
-            window.location.href ="./conta.html";
+            window.location.href ="./index.html";
         });
     }
 });
