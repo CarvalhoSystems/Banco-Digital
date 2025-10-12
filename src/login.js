@@ -8,10 +8,10 @@ document.getElementById('submitBtn').addEventListener('click', (event) => {
     const mensagemLogin = document.getElementById('mensagemLogin');
 
     // 3. Dados de login corretos (Como strings, o que é CORRETO para inputs.value)
-    const agencyLogin = "1234";
-    const accountLogin = "98765432";
-    const cpfLogin = "1234567890";
-    const passwordLogin = "123456";
+    const agencyLogin = "0123";
+    const accountLogin = "543219";
+    const cpfLogin = "11122233344";
+    const passwordLogin = "102030";
 
     // 4. Obtém os valores atuais dos campos
     const agency = document.getElementById('agency').value;
@@ -62,3 +62,53 @@ document.getElementById('submitBtn').addEventListener('click', (event) => {
                 window.location.href = "pages/newconta.html"; // Caminho para a página de cadastro
             });
         }
+
+        // ... na sua função de login em index.html
+document.getElementById('submitLoginBtn').addEventListener('click', (event) => {
+    event.preventDefault();
+
+    const loginAgencia = document.getElementById('agenciaLogin').value;
+    const loginConta = document.getElementById('contaLogin').value;
+    const loginSenha = document.getElementById('senhaLogin').value;
+
+    // 1. Pega a string JSON do localStorage
+    const dadosUsuarioJSON = localStorage.getItem('usuarioLogado');
+
+    if (dadosUsuarioJSON) {
+        // 2. Converte a string JSON de volta para um objeto JavaScript
+        const contaCadastrada = JSON.parse(dadosUsuarioJSON);
+
+        // 3. Verifica se as credenciais coincidem
+        if (
+            loginAgencia === contaCadastrada.agencia &&
+            loginConta === contaCadastrada.conta &&
+            loginSenha === contaCadastrada.senha
+        ) {
+            // Sucesso no Login!
+            Swal.fire({
+                icon: 'success',
+                title: 'Login Bem-Sucedido!',
+                text: 'Acesso liberado.',
+                showConfirmButton: false,
+                timer: 1500
+            }).then(() => {
+                // Redireciona para a página principal (ex: dashboard)
+                window.location.href = "../index.html";
+            });
+        } else {
+            // Falha no Login
+            Swal.fire({
+                icon: 'error',
+                title: 'Erro de Login',
+                text: 'Agência, Conta ou Senha inválidos.',
+            });
+        }
+    } else {
+        // Nenhum usuário cadastrado encontrado
+        Swal.fire({
+            icon: 'error',
+            title: 'Erro de Login',
+            text: 'Nenhuma conta encontrada. Cadastre-se primeiro.',
+        });
+    }
+});
