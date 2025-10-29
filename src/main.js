@@ -90,8 +90,9 @@ class ContaBancaria {
     this.atualizarStorage();
   }
 }
-
+//===============
 // ===== UI =====
+//===============
 const conta = new ContaBancaria();
 const valorInput = document.getElementById("valor");
 const resultadoDiv = document.getElementById("resultado");
@@ -119,8 +120,9 @@ function atualizarHistorico() {
     historicoUl.appendChild(li);
   });
 }
-
+//=======
 // Botões
+//=======
 document.getElementById("deposito").addEventListener("click", () => {
   const res = conta.depositar(valorInput.value);
   mostrarMensagem(res.message, res.ok);
@@ -144,8 +146,9 @@ document.getElementById("limpar").addEventListener("click", () => {
     atualizarHistorico();
   }
 });
-
+//==============
 // Inicialização
+//==============
 window.addEventListener("DOMContentLoaded", () => {
   mostrarMensagem("Bem-vindo! Conta carregada.");
   atualizarHistorico();
@@ -167,5 +170,25 @@ document.getElementById("sair").addEventListener("click", () => {
     }
   });
 });
+//======================
+// Esqueci a senha
+//=======================
 
-//
+const esqueciSenha = document.getElementById("forgotBtn");
+if (esqueciSenha) {
+  esqueciSenha.addEventListener("click", (event) => {
+    event.preventDefault();
+    Swal.fire({
+      title: "Esqueceu a senha?",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+    }).then((result) => {
+      if (result.isConfirmed) {
+        // Redireciona
+        window.location.href = "../newConta";
+      }
+    });
+  });
+}
