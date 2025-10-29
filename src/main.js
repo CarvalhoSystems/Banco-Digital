@@ -161,7 +161,9 @@ document.getElementById("sair").addEventListener("click", () => {
     confirmButtonText: "Sim, sair!",
   }).then((result) => {
     if (result.isConfirmed) {
-      window.location.href = "index.html";
+      // Limpa o usuário logado do localStorage para segurança
+      localStorage.removeItem("usuarioLogado");
+      window.location.href = "../index.html";
     }
   });
 });
