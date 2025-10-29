@@ -97,7 +97,7 @@ document.getElementById("submitLoginBtn").addEventListener("click", (event) => {
         timer: 1500,
       }).then(() => {
         // Redireciona para a página principal (ex: dashboard)
-        window.location.href = "./conta.html";
+        window.location.href = "pages/conta.html";
       });
     } else {
       // Falha no Login
