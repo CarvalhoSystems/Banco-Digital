@@ -72,19 +72,23 @@ document.getElementById("submitLoginBtn").addEventListener("click", (event) => {
   const loginSenha = document.getElementById("senhaLogin").value;
 
   // 1. Pega a string JSON do localStorage
-  const dadosUsuarioJSON = localStorage.getItem("usuarioLogado");
+  const contasCadastradasString = localStorage.getItem("contasCadastradas");
 
-  if (dadosUsuarioJSON) {
+  if (contasCadastradasString) {
     // 2. Converte a string JSON de volta para um objeto JavaScript
-    const contaCadastrada = JSON.parse(dadosUsuarioJSON);
+    const contas = JSON.parse(contasCadastradasString);
 
-    // 3. Verifica se as credenciais coincidem
-    if (
-      loginAgencia === contaCadastrada.agencia &&
-      loginConta === contaCadastrada.conta &&
-      loginSenha === contaCadastrada.senha
-    ) {
+    const contaLogada = contas.find(
+      (conta) =>
+        conta.agencia === loginAgencia &&
+        conta.conta === loginConta &&
+        conta.senha === loginSenha
+    );
+
+    if (contaLogada) {
       // Sucesso no Login!
+      localStorage.setItem("usuarioLogado", JSON.stringify(contaLogada));
+
       Swal.fire({
         icon: "success",
         title: "Login Bem-Sucedido!",

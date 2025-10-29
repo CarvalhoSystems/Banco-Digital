@@ -161,7 +161,7 @@ document.getElementById("sair").addEventListener("click", () => {
     confirmButtonText: "Sim, sair!",
   }).then((result) => {
     if (result.isConfirmed) {
-      window.location.href = "/lanpage.html";
+      window.location.href = "/indexLanpage.html";
     }
   });
 });
