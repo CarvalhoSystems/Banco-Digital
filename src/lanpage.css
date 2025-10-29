@@ -1,0 +1,324 @@
+:root {
+  /* Cores Principais */
+  --primary-color: #007bff; /* Azul Forte: Botões, Destaques */
+  --secondary-color: #3b6280; /* Azul Escuro: Textos, Títulos */
+  --success-color: #28a745; /* Verde: Chamada para Ação (CTA) */
+  --background-color: #f4f7f9; /* Fundo Leve */
+  --card-background: white;
+}
+
+/* Base */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  color: var(--secondary-color);
+  background-color: var(--background-color);
+  line-height: 1.6;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Navbar */
+.navbar {
+  background-color: var(--card-background);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  position: sticky; /* Mantém a barra fixa no topo */
+  top: 0;
+  z-index: 1000;
+}
+
+.navbar .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 20px;
+}
+
+.logo {
+  font-size: 1.8em;
+  color: var(--primary-color);
+  font-weight: 700;
+}
+
+nav a {
+  text-decoration: none;
+  color: var(--secondary-color);
+  margin-left: 20px;
+  padding: 8px 10px;
+  transition: color 0.3s;
+}
+
+nav a:hover {
+  color: var(--primary-color);
+}
+
+.login-btn {
+  background-color: var(--primary-color);
+  color: white !important;
+  padding: 8px 15px;
+  border-radius: 4px;
+  font-weight: 600;
+  transition: background-color 0.3s;
+}
+
+.login-btn:hover {
+  background-color: #0056b3;
+}
+
+/* Seção Hero (Destaque Principal) */
+.hero {
+  background-color: var(--background-color);
+  padding: 80px 0;
+}
+
+.hero-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+}
+
+.hero h2 {
+  font-size: 3em;
+  color: var(--primary-color);
+  margin-bottom: 15px;
+  line-height: 1.1;
+}
+
+.tagline {
+  font-size: 1.3em;
+  color: #555;
+  margin-bottom: 30px;
+}
+
+.cta-button {
+  display: inline-block;
+  background-color: var(--success-color);
+  color: white;
+  padding: 15px 30px;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 8px;
+  font-size: 1.1em;
+  transition: background-color 0.3s;
+  box-shadow: 0 4px 6px rgba(40, 167, 69, 0.3);
+}
+
+.cta-button:hover {
+  background-color: #1e7e34;
+}
+
+.hero-img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+/*========================
+/* Seção de Benefícios */
+/*========================*/
+.benefits {
+  padding: 60px 0;
+  background-color: var(--card-background);
+  text-align: center;
+}
+
+.section-title {
+  font-size: 2em;
+  color: var(--secondary-color);
+  margin-bottom: 40px;
+}
+
+.cards-grid {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.benefit-card {
+  flex: 1;
+  min-width: 250px;
+  max-width: 300px;
+  padding: 25px;
+  border-radius: 8px;
+  border: 1px solid #eee;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s;
+  text-align: left;
+}
+
+.benefit-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+}
+
+.benefit-card h4 {
+  color: var(--primary-color);
+  margin-bottom: 10px;
+  font-size: 1.4em;
+}
+/*=======================
+/* Chamada Final (CTA) */
+/*=======================*/
+.final-cta {
+  background-color: var(--primary-color);
+  color: white;
+  padding: 50px 0;
+  text-align: center;
+  margin-top: 40px;
+}
+
+.final-cta h3 {
+  font-size: 2.2em;
+  margin-bottom: 10px;
+}
+
+.final-cta p {
+  font-size: 1.1em;
+  margin-bottom: 20px;
+}
+
+.secondary-cta {
+  background-color: white;
+  color: var(--primary-color);
+  padding: 12px 25px;
+}
+
+.secondary-cta:hover {
+  background-color: #f0f0f0;
+  color: #0056b3;
+}
+/*=================
+/* Footer */
+/*=================*/
+.footer {
+  background-color: #222;
+  color: #bbb;
+  padding: 20px 0;
+  font-size: 0.9em;
+}
+
+.footer .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footer a {
+  color: #bbb;
+  text-decoration: none;
+  margin-left: 15px;
+  transition: color 0.3s;
+}
+
+.footer a:hover {
+  color: white;
+}
+
+/* Seção de Segurança */
+.security {
+  padding: 60px 0;
+  background-color: var(--background-color);
+  text-align: center;
+}
+
+.security-intro {
+  font-size: 1.1em;
+  color: #555;
+  margin-bottom: 30px;
+}
+
+.security-grid {
+  display: flex;
+  gap: 30px;
+  justify-content: center;
+  margin-bottom: 40px;
+  flex-wrap: wrap;
+}
+
+.security-item {
+  flex: 1;
+  min-width: 250px;
+  max-width: 300px;
+  padding: 20px;
+  background-color: var(--card-background);
+  border-radius: 8px;
+  border: 1px solid var(--primary-color); /* Borda Azul para segurança */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+.security-item .icon {
+  font-size: 2.5em;
+  display: block;
+  margin-bottom: 10px;
+}
+
+.security-item h4 {
+  color: var(--secondary-color);
+  font-size: 1.25em;
+  margin-bottom: 8px;
+}
+
+.security-footer {
+  padding: 15px;
+  background-color: #fff3cd; /* Fundo de alerta claro */
+  border: 1px solid #ffeeba;
+  border-radius: 5px;
+  max-width: 800px;
+  margin: 0 auto;
+  color: #856404;
+  font-size: 0.9em;
+}
+
+.security-footer strong {
+  color: #5a4001;
+}
+
+/* Responsividade para a seção de segurança em telas menores */
+@media (max-width: 768px) {
+  .security-grid {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .hero {
+    padding: 50px 0;
+  }
+  .hero-content {
+    flex-direction: column-reverse; /* Imagem em cima, texto embaixo */
+    text-align: center;
+  }
+  .hero-img {
+    margin-bottom: 20px;
+  }
+  .hero h2 {
+    font-size: 2.5em;
+  }
+  .navbar .container {
+    flex-direction: column;
+    gap: 10px;
+  }
+  .navbar nav {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    width: 100%;
+    align-items: center;
+  }
+  nav a {
+    margin-left: 0;
+  }
+}

@@ -1,50 +1,65 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Banco Digital</title>
-    <link rel="stylesheet" href="../src/style.css">
-</head>
-<body>
-    
+    <link rel="stylesheet" href="../src/style.css" />
+    <link
+      rel="icon"
+      type="image/png"
+      href="/src/favicon/favicon-96x96.png"
+      sizes="96x96"
+    />
+    <link rel="icon" type="imagem/svg+xml" href="/src/favicon/favicon.svg" />
+    <link rel="ícone do atalho" href="/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+  </head>
+  <body>
     <h1>BEM-VINDO À SUA CONTA</h1>
 
     <div class="layout-content">
-        
-        <div class="ilustracao-banner">
-            <img 
-                src="https://img.freepik.com/vetores-premium/ilustracao-de-personagem-de-desenho-vetorial-grafico-de-banco_516790-1795.jpg" 
-                alt="Logo Banco Digital" 
-                class="logo-img">
+      <div class="ilustracao-banner">
+        <img
+          src="https://img.freepik.com/vetores-premium/ilustracao-de-personagem-de-desenho-vetorial-grafico-de-banco_516790-1795.jpg"
+          alt="Logo Banco Digital"
+          class="logo-img"
+        />
+      </div>
+
+      <div class="card" role="main">
+        <h2>Conta Bancária</h2>
+
+        <div class="input-group">
+          <input
+            id="valor"
+            type="text"
+            inputmode="decimal"
+            placeholder="Valor (ex: 150,50)"
+            aria-label="Valor"
+          />
         </div>
 
-        <div class="card" role="main">
-            <h2>Conta Bancária — Demo</h2>
-
-            <div class="row">
-                <input id="valor" type="text" inputmode="decimal" placeholder="Valor (ex: 150,50)" aria-label="Valor">
-                <button id="deposito">Depositar</button>
-                <button id="saque">Sacar</button>
-            </div>
-
-            <div class="row">
-                <button id="consultar">Consultar Saldo</button>
-                <button id="limpar">Limpar Conta (zerar)</button>
-                <button id="sair">Sair (apenas mensagem)</button>
-            </div>
-
-            <div id="resultado" aria-live="polite">Carregando...</div>
-
-            <div class="meta small historico-titulo">Histórico de transações:</div>
-            <ul id="historico"></ul>
+        <div class="row">
+          <button id="deposito">Depositar</button>
+          <button id="saque">Sacar</button>
+          <button id="consultar">Consultar Saldo</button>
+          <button id="limpar">Limpar Conta (zerar)</button>
+          <button id="sair">Sair</button>
         </div>
-        
-    </div> <footer>
-        <small>Banco Digital - Todos os direitos reservados &copy; 2025</small>
+
+        <div id="resultado" aria-live="polite">Carregando...</div>
+
+        <div class="meta small historico-titulo">Histórico de transações:</div>
+        <ul id="historico"></ul>
+      </div>
+    </div>
+    <footer>
+      <small>Banco Digital - Todos os direitos reservados &copy; 2025</small>
     </footer>
 
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script> 
-    <script src="../src/main.js"></script>
-</body>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="/src/main.js"></script>
+  </body>
 </html>

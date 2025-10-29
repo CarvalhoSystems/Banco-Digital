@@ -2,32 +2,32 @@
  * 1. Configuração Global e Layout Base (BODY)
  * ---------------------------------------------------------------- */
 body {
-    font-family: system-ui, "Segoe UI", Roboto, "Helvetica Neue", Arial;
-    display: flex;
-    flex-direction: column; /* Organiza h1, layout-content e footer verticalmente */
-    align-items: center; /* Centraliza todo o conteúdo horizontalmente */
-    min-height: 100vh;
-    background: linear-gradient(135deg, #1d2b64, #2575fc);
-    color: #fff;
-    margin: 0;
-    padding: 20px;
+  font-family: system-ui, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  display: flex;
+  flex-direction: column; /* Organiza h1, layout-content e footer verticalmente */
+  align-items: center; /* Centraliza todo o conteúdo horizontalmente */
+  min-height: 100vh;
+  background: linear-gradient(135deg, #1d2b64, #2575fc);
+  color: #fff;
+  margin: 0;
+  padding: 20px;
 }
 
 /* ----------------------------------------------------------------
  * 2. Título (H1) e Rodapé (FOOTER)
  * ---------------------------------------------------------------- */
 h1 {
-    font-size: 2rem;
-    text-align: center;
-    margin: 0;
-    padding-bottom: 30px; /* Espaçamento entre o título e o conteúdo principal */
+  font-size: 2rem;
+  text-align: center;
+  margin: 0;
+  padding-bottom: 30px; /* Espaçamento entre o título e o conteúdo principal */
 }
 
 footer {
-    border-radius: 10px;
-    padding: 10px;
-    margin-top: 30px; /* Espaçamento entre o card e o footer */
-    text-align: center;
+  border-radius: 10px;
+  padding: 10px;
+  margin-top: 30px; /* Espaçamento entre o card e o footer */
+  text-align: center;
 }
 
 /* ----------------------------------------------------------------
@@ -36,34 +36,50 @@ footer {
 
 /* Contêiner que alinha Ilustração e Card Lado a Lado */
 .layout-content {
-    display: flex;
-    align-items: center; /* Alinha a Ilustração e o Card no centro vertical */
-    justify-content: center; /* Centraliza a dupla horizontalmente */
-    gap: 40px; /* Espaço entre a imagem e o card */
-    width: 100%;
-    /* ESSENCIAL: Ocupa todo o espaço vertical livre, empurrando o footer para baixo */
-    flex-grow: 1; 
+  display: flex;
+  align-items: center; /* Alinha a Ilustração e o Card no centro vertical */
+  justify-content: center; /* Centraliza a dupla horizontalmente */
+  gap: 40px; /* Espaço entre a imagem e o card */
+  width: 100%;
+  /* ESSENCIAL: Ocupa todo o espaço vertical livre, empurrando o footer para baixo */
+  flex-grow: 1;
 }
 
 /* Estilo para a imagem grande */
 .ilustracao-banner {
-    max-width: 450px; /* Limita o tamanho do contêiner da imagem */
-    height: auto;
+  max-width: 450px; /* Limita o tamanho do contêiner da imagem */
+  height: auto;
 }
 
 .logo-img {
-    width: 100%; /* Faz a imagem ocupar o contêiner da ilustração */
-    height: auto;
-    display: block; /* Remove o espaço extra abaixo da imagem */
+  width: 100%; /* Faz a imagem ocupar o contêiner da ilustração */
+  height: auto;
+  display: block; /* Remove o espaço extra abaixo da imagem */
 }
 
 .card {
-    width: 100%;
-    max-width: 520px;
-    background: rgba(255,255,255,0.06);
-    padding: 18px;
-    border-radius: 12px;
-    box-shadow: 0 8px 30px rgba(0,0,0,0.3);
+  width: 100%;
+  max-width: 520px;
+
+  /* REPAGINADO: Fundo com leve acento do gradiente principal */
+  background: rgba(
+    37,
+    117,
+    252,
+    0.15
+  ); /* Um azul levemente mais forte do que 0.06 de branco */
+  /* OU: background: rgba(29, 43, 100, 0.4); para um tom mais escuro e profundo */
+
+  padding: 25px; /* Aumenta um pouco o padding interno */
+  border-radius: 15px; /* Cantos mais arredondados para um visual suave */
+
+  /* REPAGINADO: Sombra mais pronunciada e uma borda sutil (frosted glass) */
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.1); /* Borda sutil */
+
+  /* Adiciona um efeito de blur para "vidro fosco" (opcional) */
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
 }
 
 /* ----------------------------------------------------------------
@@ -71,80 +87,226 @@ footer {
  * ---------------------------------------------------------------- */
 
 /* Ponto de quebra para telas menores (ex: tablets e celulares) */
-@media (max-width: 1050px) { 
-    
-    /* Empilha a Ilustração e o Card em telas pequenas */
-    .layout-content {
-        flex-direction: column;
-        gap: 25px;
-        padding: 0 10px; /* Adiciona um pequeno padding nas laterais */
-    }
+@media (max-width: 1050px) {
+  /* Empilha a Ilustração e o Card em telas pequenas */
+  .layout-content {
+    flex-direction: column;
+    gap: 25px;
+    padding: 0 10px; /* Adiciona um pequeno padding nas laterais */
+  }
 
-    /* Reduz o tamanho da imagem para caber melhor no celular */
-    .ilustracao-banner {
-        max-width: 90vw;
-    }
+  /* Reduz o tamanho da imagem para caber melhor no celular */
+  .ilustracao-banner {
+    max-width: 90vw;
+  }
 }
-
 
 /* ----------------------------------------------------------------
  * 5. Estilos de Conteúdo (Mantidos de seu código original)
  * ---------------------------------------------------------------- */
 .row {
-    display: flex;
-    gap: 8px;
-    flex-wrap: wrap;
-    margin-bottom: 10px;
+  display: flex;
+  gap: 10px; /* Aumentei um pouco o gap */
+  flex-wrap: wrap;
+  margin-bottom: 15px; /* Mais espaço entre as linhas de botões */
 }
+
+/* Estilos para o texto dentro do card */
+.card p {
+  margin-bottom: 8px;
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+.card strong {
+  color: #96c93d; /* Destaca o saldo atual com a cor do depósito */
+}
+
+.card ul {
+  list-style: none;
+  padding: 0;
+  margin-top: 15px;
+}
+
+.card ul li {
+  background: rgba(
+    255,
+    255,
+    255,
+    0.08
+  ); /* Fundo sutil para cada item de transação */
+  padding: 8px 12px;
+  margin-bottom: 5px;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  display: flex;
+  justify-content: space-between; /* Alinha o texto da transação e a data */
+  align-items: center;
+}
+
 /* -------------------------------------------------------------------
-* 6. Button e Input
-*------------------------------------------------------------------- */
+ * 6. Button e Input (Repaginado)
+ *------------------------------------------------------------------- */
+
+/* Input de valor */
+.input-group {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px; /* Espaço abaixo do input */
+  align-items: center;
+}
+
+.input-group input[type="text"] {
+  flex-grow: 1; /* O input ocupa o máximo de espaço */
+  padding: 20px 18px; /* Aumentei o padding para mais altura */
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.2); /* Borda sutil */
+  background: rgba(255, 255, 255, 0.1); /* Fundo semi-transparente claro */
+  color: #fff;
+  font-size: 1.2rem; /* Aumentei o tamanho da fonte */
+  outline: none; /* Remove outline padrão */
+  transition: all 0.3s ease;
+  width: 100%;
+}
+
+.input-group input[type="text"]::placeholder {
+  color: rgba(255, 255, 255, 0.6); /* Placeholder mais visível */
+}
+
+.input-group input[type="text"]:focus {
+  border-color: #96c93d; /* Cor da borda ao focar, alinhada com depósito */
+  box-shadow: 0 0 0 3px rgba(150, 201, 61, 0.3); /* Um leve brilho ao focar */
+}
 
 button {
-    /* Define o espaço flexível para que os botões se ajustem bem na .row */
-    flex: 1 1 auto; 
-    
-    padding: 12px 16px; /* Aumenta o padding para botões maiores */
-    border-radius: 8px;
-    border: none;
-    cursor: pointer;
-    
-    /* Degradê Chamativo - Usando cores inspiradas no seu fundo */
-    background: linear-gradient(90deg, #6a11cb, #2575fc); /* Roxo para Azul Claro */
-    color: white;
-    font-weight: bold; /* Deixa o texto mais legível */
-    text-transform: uppercase; /* Ajuda a dar destaque */
-    letter-spacing: 0.5px;
-    
-    /* Efeito de Sombra sutil para "levantar" o botão */
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); 
-    
-    /* Transição suave para o efeito hover */
-    transition: background 0.3s ease, transform 0.1s ease;
+  flex: 1 1 auto; /* Mantém a flexibilidade */
+  padding: 14px 18px;
+  border-radius: 10px; /* Repaginado: Cantos mais suaves */
+  border: none;
+  cursor: pointer;
+  color: white;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 0.8px; /* Ajuste sutil */
+  font-size: 0.9rem; /* Levemente menor */
+
+  /* Sombra mais elegante para dar profundidade */
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+
+  /* Transição mais suave para todos os efeitos */
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
 
 /* Efeito ao passar o mouse (Hover) */
 button:hover {
-    /* Aumenta a sombra e muda sutilmente o degradê ou a posição */
-    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.5);
-    transform: translateY(-1px); /* Pequeno efeito de "levantar" */
-    opacity: 0.9;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.45); /* Sombra mais intensa */
+  transform: translateY(-2px); /* Efeito de levantar */
+  filter: brightness(1.1); /* Leve brilho na cor */
 }
 
 /* Efeito ao clicar (Active) */
 button:active {
-    transform: translateY(1px); /* Pequeno efeito de "pressionar" */
+  transform: translateY(1px); /* Efeito de pressionar */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3) inset, 0 2px 5px rgba(0, 0, 0, 0.2);
+  filter: brightness(0.9); /* Escurece levemente ao clicar */
 }
 
+/* Botões de Ação Principal (Mantendo cores) */
+#deposito {
+  /* Ajuste: Id do botão deve ser 'depositar', não 'deposito' */
+  background: linear-gradient(
+    90deg,
+    #00b09b,
+    #96c93d
+  ); /* Verde Vívido para Depósito */
+  /* Se quiser adicionar ícone, o HTML precisaria ser alterado */
+  /* content: '⬆ DEPOSITAR'; ou usar um <span> para o ícone */
+}
+
+#sacar {
+  background: linear-gradient(
+    90deg,
+    #d31027,
+    #ff2300
+  ); /* Vermelho Vívido para Saque */
+  /* content: '⬇ SACAR'; */
+}
+
+/* Botões Secundários - Estilo "Ghost Button" com borda colorida */
+#consultar-saldo,
+#limpar,
+#sair {
+  /* Adapte os IDs dos seus botões */
+  background: transparent; /* Fundo transparente */
+  border: 2px solid; /* Borda visível */
+  box-shadow: none; /* Remove a sombra padrão para esses */
+  font-weight: normal; /* Menos negrito para secundários */
+}
+
+#consultar {
+  border-color: #6a11cb; /* Borda roxa, alinhada com o gradiente roxo */
+  color: #6a11cb;
+}
+#limpar {
+  border-color: #2575fc; /* Borda azul, alinhada com o gradiente azul */
+  color: #2575fc;
+}
+#sair {
+  border-color: #d31027; /* Borda vermelha */
+  color: #d31027;
+}
+
+/* Efeitos de hover e active para botões secundários */
+#consultar:hover,
+#limpar:hover,
+#sair:hover {
+  background: rgba(255, 255, 255, 0.1); /* Fundo sutil no hover */
+  transform: translateY(-1px); /* Leve levantamento */
+  box-shadow: none;
+  filter: none; /* Remove brilho de hover de botões principais */
+}
+
+#consultar:active,
+#limpar:active,
+#sair:active {
+  background: rgba(255, 255, 255, 0.05); /* Fundo mais sutil no active */
+  transform: translateY(0px); /* Volta à posição original */
+  box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.2); /* Sombra interna discreta */
+}
 /* ----------------------------------------------------------------
  * OPCIONAL: Destaque Especial para Ações Principais (Depositar/Sacar)
  * ---------------------------------------------------------------- */
 
-
 #deposito {
-    background: linear-gradient(90deg, #00b09b, #96c93d); /* Verde Vívido para Depósito */
+  background: linear-gradient(
+    90deg,
+    #00b09b,
+    #96c93d
+  ); /* Verde Vívido para Depósito */
 }
 
 #saque {
-    background: linear-gradient(90deg, #d31027, #ff2300); /* Vermelho Vívido para Saque */
+  background: linear-gradient(
+    90deg,
+    #d31027,
+    #ff2300
+  ); /* Vermelho Vívido para Saque */
 }
+
+#consultar {
+    background: #96c93d;
+}
+
+#limpar {
+    background: linear-gradient( 90deg,
+    #2575fc,
+    #d31027);
+    color: white;
+}
+
+
+#sair {
+    background: white;
+}
+
+/*
