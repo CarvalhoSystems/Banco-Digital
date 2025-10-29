@@ -42,7 +42,7 @@ document.getElementById("submitBtn").addEventListener("click", (event) => {
       showConfirmButton: false, // Não mostra o botão, pois vai redirecionar
       timer: 1500, // Fecha automaticamente em 1.5 segundos
     }).then(() => {
-      window.location.href = "../index.html";
+      window.location.href = "../conta.html";
     });
   } else {
     // Exemplo SweetAlert para credenciais incorretas
