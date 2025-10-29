@@ -42,7 +42,7 @@ document.getElementById("submitBtn").addEventListener("click", (event) => {
       showConfirmButton: false, // Não mostra o botão, pois vai redirecionar
       timer: 1500, // Fecha automaticamente em 1.5 segundos
     }).then(() => {
-      window.location.href = "conta.html";
+      window.location.href = "../index.html";
     });
   } else {
     // Exemplo SweetAlert para credenciais incorretas
@@ -59,7 +59,7 @@ const openAccountBtn = document.getElementById("openAccount");
 if (openAccountBtn) {
   openAccountBtn.addEventListener("click", (event) => {
     event.preventDefault();
-    window.location.href = "newconta.html";
+    window.location.href = "../newconta.html";
   });
 }
 
